@@ -61,7 +61,7 @@ ghi chú: {nếu có}
 
  **Đầu vào không hợp lệ**: 
 - Trả trạng thái: lỗi 
-- ghi chú: Đầu vào bị từ chối do vi phạm an toàn hoặc định dạng sai` => không làm gián đoạn luồng
+- ghi chú: Đầu vào bị từ chối do vi phạm an toàn hoặc định dạng sai => không làm gián đoạn luồng
 
 **Đầu ra không khớp cấu trúc**: 
 - Bước 3 yêu cầu tạo lại tối đa 2 lần trước khi báo lỗi rõ ràng
