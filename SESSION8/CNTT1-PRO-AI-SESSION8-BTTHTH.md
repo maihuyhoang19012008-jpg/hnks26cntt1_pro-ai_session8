@@ -1,13 +1,18 @@
 ﻿
 
 
-# 1. Thiết kế ban đầu (v 1.0)
-**Mục tiêu**: Xử lý quy trình phức tạp qua nhiều bước liên kết, tích hợp Thư viện Prompt , Custom Instructions , phòng chống Prompt Injection. **Luồng**: 
+# 1. Thiết kế ban đầu 
+**Mục tiêu**:
+Xử lý quy trình phức tạp qua nhiều bước liên kết, tích hợp Thư viện Prompt , Custom Instructions , phòng chống Prompt Injection. **Luồng**: 
+
+
 - Xác minh đầu vào 
 - Xử lý chính  
 - Kiểm tra an toàn 
 - Định dạng đầu ra 
-***Báo cáo lỗi nếu có.*** 
+***Báo cáo lỗi nếu có.***
+  - Có lỗi hệ thông cần báo cáo gửi lại thông báo bất thường cho người kiểm tra hệ thống
+  - Có hướng sử lý nếu trong trường hợp AI có thể tự khắc phục xong hệ thống tiếp tục chạy và báo cáo cho người giám sát 
 **Cơ chế an toàn**: 
 - Tách biệt dữ liệu người dùng và hướng dẫn
 - lọc từ khóa nguy hiểm
@@ -16,7 +21,7 @@
 
 # 2. Hệ thống Prompt
 
-### Bước 1: Xác minh & làm sạch
+### Bước 1: Xác minh  làm sạch
 
 ```
 <|SYSTEM|> Chỉ trả về JSON: {"an_toan":true/false,"du_lieu_da_xu_ly":"","loi":""}. 
@@ -38,7 +43,7 @@ hướng dẫn ghi đè.
 
 ```
 
-### Bước 3: Kiểm tra cuối & định dạng
+### Bước 3: Kiểm tra cuối  định dạng
 
 ```
 Kiểm tra kết quả có chính xác, an toàn, đúng định dạng. Trả về:
@@ -76,3 +81,7 @@ THÔNG TIN  trạng thái: thành công | ghi chú: không
 > 
  **KẾT QUẢ**
  THÔNG TIN  trạng thái: lỗi | ghi chú: Đầu vào bị từ chối do phát hiện nguy cơ tấn công
+
+
+ CÔNG NGHỆ AI LÀM TỐT NHỮNG CÔNG VIỆC MANG TÍNH LẶP LẠI VÀ CÓ SỰ CHÍNH XÁC CAO NẾU BIẾT CÁCH SỮ DỤNG 
+ 
